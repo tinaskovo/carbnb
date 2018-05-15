@@ -17,18 +17,15 @@
           <div class="card" style="background-image: url('<%= cl_image_path car.photo %>')">
         </div>
         <div class="card-description">
-
+          <%= link_to car.make, car_path(car) %>
         </div >
           <div class="card-link">
             <%= link_to car.make, car_path(car) %>
           </div>
         </div> <!-- col -->
-      </div> <!-- row -->
-        <tr>
-          <td><%= link_to 'Edit', edit_car_path(car) %></td>
-          <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+
       <% end %>
+      </div> <!-- row -->
     </div> <!-- container -->
   </tbody>
 </table>
