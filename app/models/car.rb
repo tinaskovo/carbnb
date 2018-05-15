@@ -25,4 +25,6 @@ class Car < ApplicationRecord
 
   validates :transmission, presence: true, :inclusion => { :in => ["automatic" "semi-auto", "manual"],
     message: "%{value} is not a valid fuel type" }, allow_nil: true
+
+  mount_uploader :photo, PhotoUploader
 end
