@@ -81,7 +81,7 @@ cars = [
     },
         {
     make: "Land Rover", price: "400", year_made: "1966",
-    mileage: "130000", engine_size: "2", car_model: "SL Pagode", transmission:"Manual",
+    mileage: "130000", engine_size: "2", car_model: "Series 2", transmission:"Manual",
     bhp:"300", fuel_type: "Petrol", seats: "2", doors: "3",
     photo: "https://silodrome.com/wp-content/uploads/2014/01/LAND-ROVER-SERIES-IIA-FRONT.jpg"
     },
@@ -135,11 +135,19 @@ cars = [
     }
 ]
 
-users = User.all
-
-cars.each do |car_attributes|
+def build_car(car_attributes)
+  users = User.all
+  begin
   car = Car.new(car_attributes)
-  car.remote_photo_url = car_attributes[:photo]
   car.user = users.sample
-  binding.pry unless car.save
+  car.remote_photo_url = car_attributes[:photo]
+  puts "#{car.make} #{car.car_model} successfully created" if car.save
+  rescue Cloudinary::CarrierWave::UploadError
+    puts "Error uploading, waiting a minute"
+    sleep(30)
+    build_car(car_attributes)
+  end
+end
+cars.each do |car_attributes|
+  build_car(car_attributes)
 end
