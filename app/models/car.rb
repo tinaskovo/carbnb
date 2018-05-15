@@ -8,7 +8,7 @@ class Car < ApplicationRecord
 
   validates_associated :bookings
 
-  validates :users,  presence: true
+  validates :user,  presence: true
   validates :make, presence: true
   validates :car_model,  presence: true
 
@@ -20,10 +20,10 @@ class Car < ApplicationRecord
   validates :doors, numericality: true
   validates :bhp, numericality: true
 
-  validates :fuel_type, :inclusion => { :in => ["petrol", "diesel", "electric"],
+  validates :fuel_type, :inclusion => { :in => ["Petrol", "Diesel", "Electric"],
     message: "%{value} is not a valid fuel type" }, allow_nil: true
 
-  validates :transmission, presence: true, :inclusion => { :in => ["automatic" "semi-auto", "manual"],
+  validates :transmission, presence: true, :inclusion => { :in => ["Automatic" "Semi-auto", "Manual"],
     message: "%{value} is not a valid fuel type" }, allow_nil: true
 
   def self.search(search)
