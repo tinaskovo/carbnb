@@ -20,6 +20,7 @@ class CarsController < ApplicationController
       redirect_to car_path(@car)
     else
       render :new
+    end
   end
 
   def update
@@ -31,4 +32,14 @@ class CarsController < ApplicationController
     @car.destroy
     redirect_to cars_path
   end
+
+  private
+
+    def car_params
+      params.require(:car).permit(:name)
+    end
+
+    def set_car
+      @car = Car.find(params[:id])
+    end
 end
