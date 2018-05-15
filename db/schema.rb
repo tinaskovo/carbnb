@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20180515134820) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "check_in"
-    t.date "check_out"
+    t.string "check_in"
+    t.string "check_out"
     t.bigint "user_id"
     t.bigint "car_id"
     t.datetime "created_at", null: false
@@ -28,17 +28,17 @@ ActiveRecord::Schema.define(version: 20180515134820) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
-    t.integer "price"
+    t.string "price"
     t.bigint "user_id"
-    t.integer "year_made"
-    t.integer "mileage"
-    t.integer "engine_size"
+    t.string "year_made"
+    t.string "mileage"
+    t.string "engine_size"
     t.string "car_model"
     t.string "transmission"
-    t.integer "bhp"
+    t.string "bhp"
     t.string "fuel_type"
-    t.integer "seats"
-    t.integer "doors"
+    t.string "seats"
+    t.string "doors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

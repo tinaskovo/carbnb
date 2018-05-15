@@ -1,13 +1,18 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
-  end
-
-  def show
-
+    if params[:search]
+      @cars = Car.search(params[:search]).order("created_at DESC")
+    else
+      @Cas = Car.all.order("created_at DESC")
+    end
   end
 
   def new
+    @car = Car.new
+  end
+
+  def show
     @car = Car.new
   end
 
@@ -32,6 +37,7 @@ class CarsController < ApplicationController
     @car.destroy
     redirect_to cars_path
   end
+
 
   private
 

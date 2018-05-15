@@ -2,10 +2,12 @@
  <div class="container">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-6">
-        <div class="search-container">
-          <input type="text" class="search-bar" id="user-input" placeholder="Search for make, model or year">
-          <a href="#" class="search-btn">Search</a>
-        </div>
+          <%= form_tag(cars_path, method: "get", class: "form-inline") do%>
+            <div class="search-container">
+            <%= text_field_tag :search, params[:search], placeholder: "Search Makes", class: "search-bar" %>
+          <%= submit_tag "Search", :name => nil, class: "search-btn" %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
