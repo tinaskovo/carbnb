@@ -17,8 +17,8 @@
 }
 
 .search-btn {
-  color: white;
-  background-color: $red;
+  color: $gray;
+  background-color: #d1cfcf;
   border: none;
   padding: 6px 12px;
   border-radius: 0px 2px 2px 0px;
@@ -30,7 +30,7 @@
   transition: 0.3s background-color ease;
   &:hover {
     text-decoration: none;
-    background-color: #802915;
-    color: white;
+    background-color: #e8e5e5;
+    color: $gray;
   }
 }
