@@ -6,8 +6,12 @@
     <div class="row">
       <div class="col-sm-offset-3 col-sm-6">
         <div class="search-container">
-          <input type="text" class="search-bar" id="user-input" placeholder="Search for make, model or year">
-          <a href="#" class="search-btn">Sign in</a>
+          <div href="#" class="search-btn">
+          <%= form_tag(cars_path, :method => "get" do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Makes" %>
+              <%= submit_tag "Search", :name => nil %>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
