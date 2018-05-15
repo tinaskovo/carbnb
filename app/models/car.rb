@@ -25,7 +25,10 @@ class Car < ApplicationRecord
 
   validates :transmission, presence: true, :inclusion => { :in => ["automatic" "semi-auto", "manual"],
     message: "%{value} is not a valid fuel type" }, allow_nil: true
+
   def self.search(search)
     where("make LIKE ?", "%#{search}%")
   end
+
+  mount_uploader :photo, PhotoUploader
 end
