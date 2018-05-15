@@ -119,13 +119,13 @@ cars = [
     make: "Ford", price: "2000", year_made: "1967",
     mileage: "86400", engine_size: "6", car_model: "351 Mustang", transmission:"Manual",
     bhp:"200", fuel_type: "Petrol", seats: "4", doors: "3",
-    photo: "http://www.seriouseats.com/images/2014/11/20141104-cocktail-party-old-fashioneds-holiday-vicky-wasik-3.jpg"
+    photo: "https://i.pinimg.com/originals/89/ed/b5/89edb5bce89790268a870ad46de9f079.jpg"
     },
       {
     make: "Ford", price: "2000", year_made: "2004",
     mileage: "86400", engine_size: "5.4", car_model: "GT", transmission:"Manual",
     bhp:"200", fuel_type: "Petrol", seats: "2", doors: "2",
-    photo: "https://i.pinimg.com/originals/89/ed/b5/89edb5bce89790268a870ad46de9f079.jpg"
+    photo: "https://images.hgmsites.net/hug/1965-ford-gt40-roadster-prototype-bearing-chassis-no-gt-108--image-via-girardo-co_100617934_h.jpg"
     },
     {
     make: "Lamborghini", price: "2000", user_id: "Fred", year_made: "1966",
