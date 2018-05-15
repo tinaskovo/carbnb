@@ -10,13 +10,25 @@
   </thead>
 
   <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <% @cars.each do |car| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: url('<%= cl_image_path car.photo %>')">
+        </div>
+        <div class="card-description">
+          <%= link_to car.make, car_path(car) %>
+        </div>
+          <a class="card-link" href="#" ></a>
+        </div> <!-- col -->
+      </div> <!-- row -->
+        <tr>
+          <td><%= link_to 'Show', car %></td>
+          <td><%= link_to 'Edit', edit_car_path(car) %></td>
+          <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </div> <!-- container -->
   </tbody>
 </table>
 
