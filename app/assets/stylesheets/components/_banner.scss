@@ -1,3 +1,8 @@
 .home-banner {
-
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+  asset-url('bg-img-new.jpeg');
+  background-size: cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  height: 90vh;
 }
