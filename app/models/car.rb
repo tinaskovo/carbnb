@@ -27,7 +27,11 @@ class Car < ApplicationRecord
     message: "%{value} is not a valid fuel type" }, allow_nil: true
 
   def self.search(search)
-    where("make ILIKE ? OR car_model ILIKE ? OR year_made LIKE ? OR price LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    if search =~ /\A\d+\z/
+      where("price < ?", search)
+    else
+      where("make ILIKE ? OR car_model ILIKE ?", "%#{search}%", "%#{search}%")
+    end
   end
 
   mount_uploader :photo, PhotoUploader
