@@ -12,7 +12,6 @@ before_action :set_car, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-    @user = User.new
   end
 
   def new
