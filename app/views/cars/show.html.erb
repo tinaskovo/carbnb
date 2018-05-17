@@ -10,7 +10,7 @@
              <%= cl_image_tag @car.user.photo, class: "img-circle", :width=>75, :height=>75%>
             </div>
             <p><%=@car.user.first_name%></p>
-            <a href="#" class="btn btn-primary btn-lg">Book</a>
+            <%= link_to "Book", "#", class: "btn btn-primary btn-lg" %>
             <%= link_to "Full Profile", "#", class: "btn btn-primary btn-lg" %>
           </div>
         </div>
