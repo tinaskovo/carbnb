@@ -6,8 +6,9 @@
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-            <img src="images/seb.jpeg" alt="" width="150" class="img-circle">
-            <h2>Car Owner</h2>
+            <div >
+             <%= cl_image_tag @car.user.photo, class: "img-circle", :width=>75, :height=>75%>
+            </div>
             <p><%=@car.user.first_name%></p>
             <a href="#" class="btn btn-primary btn-lg">Book</a>
             <%= link_to "Full Profile", "#", class: "btn btn-primary btn-lg" %>
@@ -16,6 +17,7 @@
         <div class="stat">
           <div class="stat-content">
             <h3>SPECS</h3>
+            <br>
               <div class="spec-table">
               <div class="text-left">
                 <p>Model: <%=@car.car_model%></p>
