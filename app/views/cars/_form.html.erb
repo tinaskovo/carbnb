@@ -3,10 +3,24 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.input :make, placeholder: "e.g. Ford" %>
+  <%= f.input :price, placeholder: "Price per day in kr? e.g. 4200" %>
+  <%= f.input :year_made, placeholder: "e.g. 1979" %>
+  <%= f.input :mileage, required: false, placeholder: "e.g 10.000" %>
+  <%= f.input :engine_size, required: false, placeholder: "e.g. 4" %>
+  <%= f.input :car_model, placeholder: "e.g. DB5" %>
+  <%= f.input :transmission, placeholder: "Manual / Automatic" %>
+  <%= f.input :bhp, required: false, placeholder: "e.g. 282" %>
+  <%= f.input :fuel_type, required: false, placeholder: "Petrol / Diesel" %>
+  <%= f.input :seats, required: false, placeholder: "e.g. 2" %>
+  <%= f.input :doors, required: false, placeholder: "e.g. 4" %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+
+
+
 <% end %>
+
+
