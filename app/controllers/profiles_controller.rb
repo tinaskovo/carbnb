@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ProfilesController < ApplicationController
   def show
     @user = User.new
   end
@@ -25,4 +25,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
+end

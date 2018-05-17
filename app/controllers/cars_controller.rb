@@ -4,7 +4,7 @@ before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
     @cars = Car.all
-    if params[:search] && !params[:search].empty?
+    if params[:search] && params[:search].present?
       @cars = Car.search(params[:search]).order("created_at DESC")
     else
       @cars = Car.all.order("created_at DESC")
