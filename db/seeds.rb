@@ -9,14 +9,23 @@ Car.destroy_all
 User.destroy_all
 
 users = [
-  { first_name: "Fred", last_name: "Fooks", email: "fredfooks@me.com", password: 121212},
+  { first_name: "Fred", last_name: "Fooks", email: "fredfooks@me.com", password: 121212,
+    photo: "https://avatars1.githubusercontent.com/u/37072793?s=400&u=a3da37beff2056ff305a13654be9aa05ceca92af&v=4" },
 
-  { first_name: "Tina", last_name: "Turner", email: "tina@gotto.do", password: 232323},
+  { first_name: "Tina", last_name: "Turner", email: "tina@gotto.do", password: 232323,
+    photo: "https://avatars0.githubusercontent.com/u/38000034?s=400&v=4" },
 
- { first_name: "Magnus", last_name: "Parvus", email: "magnus@minimus.latin", password: 34343434}
+ { first_name: "Magnus", last_name: "Parvus", email: "magnus@minimus.latin", password: 34343434,
+   photo: "https://avatars1.githubusercontent.com/u/37999937?s=400&v=4"}
 ]
 
-User.create!(users)
+
+users.each do |user_hash|
+  user = User.new(user_hash)
+  user.remote_photo_url = user_hash[:photo]
+  puts "#{user.first_name} #{user.last_name} successfully created" if user.save
+end
+
 
 cars = [
       {
@@ -101,7 +110,7 @@ cars = [
     make: "Jaguar", price: 4000, user_id: "Fred", year_made: 1957,
     mileage: 10000, engine_size: 3.8, car_model: "XKSS", transmission:"Manual",
     bhp: 265, fuel_type: "Petrol", seats: 2, doors: 3,
-    photo: "https://icdn-4.motor1.com/images/mgl/BvoRm/s1/jaguar-xkss.jpg"
+    photo: "http://hanabi.autoweek.com/sites/default/files/styles/gen-1200-675/public/1957_Jaguar_XKSS_0043_BH.jpg?itok=qaFR5XY3"
     },
       {
     make: "Ferrari", price: 90000, user_id: "Fred", year_made: 1962,
@@ -151,3 +160,21 @@ end
 cars.each do |car_attributes|
   build_car(car_attributes)
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
