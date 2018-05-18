@@ -14,6 +14,9 @@ validate :date_checker,
       errors.add(:check_out, "check out must be after check in ")
     end
   end
+
+
+
 end
 
 

@@ -1,5 +1,15 @@
 import "bootstrap";
 
+import flatpickr from 'flatpickr'
+import 'flatpickr/dist/flatpickr.min.css'
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+
+
+flatpickr(".datepicker",{
+  altInput: true
+});
+
+
 import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');

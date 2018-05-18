@@ -1,4 +1,33 @@
-<h1>New Booking</h1>
+<div class="container">
+    <div class="confirm">
+        <div class="confirm-content">
+          <div>
+                <div class="text-center">
+                  <h4><strong><%=@car.make%></strong> <%=@car.car_model%> Cost/Day: <%= @car.price%>DKK</h4>
+                  </div>
+              <div>
+                <%= cl_image_tag @car.photo, class: "img-thumbnail", :width=>350%>
+              </div>
+              <%= simple_form_for [@car, @booking] do |f| %>
+                <%= f.input :check_in, as: :string, input_html: { class: "datepicker"} %>
+                <%= f.input :check_out, as: :string, input_html: { class: "datepicker"} %>
+                <%= f.submit %>
+              <% end %>
+          </div>
+       </div>
+    </div>
+</div>
 
 
 <%= link_to 'Back', cars_path, class: "btn btn-danger" %>
+
+
+
+
+
+
+
+
+
+
+
