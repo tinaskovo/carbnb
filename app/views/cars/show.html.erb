@@ -3,36 +3,33 @@
   <h2><%=@car.car_model%></h2>
 </div>
 <div class="container">
-      <div class="profile text-center">
-        <div class="main">
-          <div class="main-content">
-            <div >
-             <%= cl_image_tag @car.user.photo, class: "img-circle", :width=>75, :height=>75%>
-            </div>
-            <p><%=@car.user.first_name%></p>
-            <%= link_to "Book", "#", class: "btn btn-primary btn-lg" %>
-            <%= link_to "Full Profile", "#", class: "btn btn-primary btn-lg" %>
-          </div>
+  <div class="profile text-center">
+    <div class="main">
+      <div class="main-content">
+        <div >
+         <%= cl_image_tag @car.user.photo, class: "img-circle", :width=>75, :height=>75%>
         </div>
-        <div class="stat">
-          <div class="stat-content">
-            <h3>SPECS</h3>
-            <br>
-              <div class="spec-table">
-              <div class="text-left">
-                <p>Model: <%=@car.car_model%></p>
-                <p>Engine Size: <%=@car.engine_size %>L</p>
-                <p>Power: <%=@car.bhp%></p>
-                <p>Doors: <%=@car.doors%></p>
-              </div>
-              <div class="text-left">
-              <p>Seats: <%=@car.seats%></p>
-              <p>Mileage: <%=@car.mileage%>Km</p>
-              <p>Fuel Type: <%=@car.fuel_type%></p>
-              <p>Transmission: <%=@car.transmission%></p>
-            </div>
-            </div>
+        <p><%=@car.user.first_name%></p>
+        <%= link_to "Book", new_car_booking_path(@car), class: "btn btn-danger btn-lg" %>
+        <%= link_to "Full Profile", "#", class: "btn btn-danger btn-lg" %>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <h3>SPECS</h3>
+        <br>
+          <div class="spec-table">
+          <div class="text-left">
+            <p>Model: <%=@car.car_model%></p>
+            <p>Engine Size: <%=@car.engine_size %>L</p>
+            <p>Power: <%=@car.bhp%></p>
+            <p>Doors: <%=@car.doors%></p>
           </div>
+          <div class="text-left">
+          <p>Seats: <%=@car.seats%></p>
+          <p>Mileage: <%=@car.mileage%>Km</p>
+          <p>Fuel Type: <%=@car.fuel_type%></p>
+          <p>Transmission: <%=@car.transmission%></p>
         </div>
         <div class="map">
           <div class="map-content">
@@ -46,9 +43,17 @@
         </div>
       </div>
     </div>
+    <div class="map">
+      <div class="map-content">
+        <h3>GOOGLE MAPS</h3>
+        <p class="text-justify">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p id="notice"><%= notice %></p>
-<%= link_to 'Back', cars_path, class: "btn btn-danger" %>
 
 
 
