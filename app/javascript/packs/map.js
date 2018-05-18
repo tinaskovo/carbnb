@@ -1,5 +1,3 @@
-import "bootstrap";
-
 import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
