@@ -1,0 +1,49 @@
+.user {
+  display: flex;
+  flex: 0 0 400px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
+
+.main-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.grid-wrap {
+  flex-grow: 1;
+}
+
+.cars {
+  display: flex;
+  flex-direction: column;
+}
+
+.user, .cars, .stat {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.stat h3 {
+  color: #37B686;
+  font-size: 28px;
+}
+.stat p {
+  color: rgba(0,0,0,0.25);
+  font-size: 19px;
+}
+.cars h3 {
+  color: rgba(0,0,0,0.9);
+  font-size: 21px;
+  font-weight: normal;
+}
+.cars p {
+  color: rgba(0,0,0,0.5);
+  font-weight: normal;
+}
+
