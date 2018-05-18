@@ -5,13 +5,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    car = Car.find(params[:car_id])
-    booking = Booking.new(booking_params)
-    booking.car = car
-    booking.user = current_user
+    @car = Car.find(params[:car_id])
+    @booking = Booking.new(booking_params)
+    @booking.car = @car
+    @booking.user = current_user
 
-    if booking.save
-      redirect_to booking_path(booking)
+    if @booking.save
+      redirect_to car_path(@car), notice: "Congratulations you have booked #{@car.make} #{@car.car_model}"
     else
       render :new
     end
