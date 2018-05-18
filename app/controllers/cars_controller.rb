@@ -13,6 +13,10 @@ class CarsController < ApplicationController
   end
 
   def show
+    unless @car.longitude.nil? or @car.latitude.nil?
+      car_array = [@car]
+      @marker = car_array.map {|car| {lat: car.latitude, lng: car.longitude} }
+    end
   end
 
   def new
@@ -53,5 +57,3 @@ class CarsController < ApplicationController
       @car = Car.find(params[:id])
     end
 end
-
-

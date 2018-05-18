@@ -1,4 +1,5 @@
 class Car < ApplicationRecord
+
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
@@ -33,6 +34,7 @@ class Car < ApplicationRecord
       where("make ILIKE ? OR car_model ILIKE ?", "%#{search}%", "%#{search}%")
     end
   end
-
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   mount_uploader :photo, PhotoUploader
 end
