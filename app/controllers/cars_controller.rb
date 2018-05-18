@@ -2,6 +2,8 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
+
+
   def index
     @cars = Car.all
     if params[:search] && params[:search].present?
@@ -12,19 +14,21 @@ class CarsController < ApplicationController
   end
 
   def show
-
+    unless @car.longitude.nil? or @car.latitude.nil?
+      car_array = [@car]
+      @marker = car_array.map {|car| {lat: car.latitude, lng: car.longitude} }
+    end
   end
 
   def new
     @car = Car.new
   end
 
-
-
   def create
-      @car = Car.new(car_params)
+    @car = Car.new(car_params)
+    @car.user = current_user
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to car_path(car)
     else
       render :new
     end
@@ -47,7 +51,7 @@ class CarsController < ApplicationController
   private
 
     def car_params
-      params.require(:car).permit(:make)
+      params.require(:car).permit(:make, :price, :year_made, :mileage, :engine_size, :car_model, :transmission, :bhp, :fuel_type, :seats, :doors, :photo)
     end
 
     def set_car

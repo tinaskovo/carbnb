@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user_cars, only: [:show]
   def show
-    @user = User.new
   end
 
   def edit
@@ -17,6 +18,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def user_cars
+    @user_cars ||= Car.where(user: @user)
+  end
 
   def user_params
     params.require(:user).permit(:name)
