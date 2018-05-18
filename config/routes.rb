@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   end
   get 'design', to: 'pages#design'
   get "test", to: "profiles#test"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
